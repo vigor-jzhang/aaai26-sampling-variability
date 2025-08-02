@@ -1,0 +1,50 @@
+experiment:
+    task_name: "cfg"
+    net_name: "init"
+    work_dir: "./experiments"
+    # for wandb
+    project: ${experiment.task_name}_${experiment.net_name}
+    name: "init"
+    # setup
+    max_epochs: 10_000
+    ckpt_intervals: 10
+    test_intervals: 100
+    load_pretrain: False
+    pretrain_path: "/path/to/ckpt"
+    restoring: False
+    restore_path: "/path/to/ckpt"
+
+unet:
+    dim: 64
+    dim_mults: [1, 2, 4, 8]
+    flash_attn: False
+
+diffusion:
+    image_size: 256
+    timesteps: 1000
+    sampling_timesteps: 250
+    cond_drop_prob: 0.2
+    guidance_scale: 7.5
+
+optimizer:
+    lr: 1e-4
+    beta1: 0.9
+    beta2: 0.999
+    weight_decay: 1e-4
+
+lr_scheduler:
+    warmup_epochs: 500
+    factor: 0.8
+    patience: 10
+    cooldown: 10
+    min_lr: 1e-5
+
+dataloader:
+    data_root_dir: "path/to/real/data/folder"
+    batchs_num: 16
+    batch_size: 21
+    num_workers: 8
+
+training:
+    device: "cuda:0"
+    seed: 42
