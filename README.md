@@ -1,6 +1,6 @@
 # When to Trust a Diffusion Model: Conditioning Strength and Sampling Variability in High-Stakes Domains
 
-Official PyTorch implementation of our paper (paper id: 21212) submitted to AAAI 2026.
+Official PyTorch implementation of our paper (paper id: 1062) submitted to MICCAI 2026.
 
 ## Abstract
 
